@@ -29,7 +29,13 @@ def displayPrice(num="__all__"):
     except IndexError:
         print(Fore.RED+Back.WHITE+"OUT OF RANGE")
 def editPrice():
-    f = open("pl","r")
+    try:
+        f = open("pl","r")
+    except FileNotFoundError:
+        f = open("pl","w")
+        f.write("")
+        f.close()
+        editPrice()
     r = f.read().split("\n")
     if "" in r:
         r.remove("")
@@ -45,7 +51,13 @@ def editPrice():
     f.write(pre+"\n"+str(x)+","+FUNRED("product name : ")+","+FUNRED("price : ")+"\n"+post)
     f.close()
 def saveNewPrice(username,passwrd):
-    r = open("pl","r").read().split("\n")
+    try:
+        r = open("pl","r")
+    except FileNotFoundError:
+        f = open("pl","w")
+        f.write("")
+        f.close()
+        editPrice()
     if "" in r:
         r.remove("")
     f = open("pl","a+")
