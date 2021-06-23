@@ -76,7 +76,7 @@ while True:
     elif x=="3":
         displayPrice(int(FUNRED(Fore.RED+Back.WHITE+"Sl No. : ")))
     elif x=="4":
-        displayPrice("procuct name")
+        displayPrice("product name")
     elif x=="5":
         displayPrice("price")
     elif x=="6":
