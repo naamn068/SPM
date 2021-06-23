@@ -53,7 +53,7 @@ def editPrice():
 def saveNewPrice(username,passwrd):
     try:
         r = open("pl","r")
-        r = r.read()
+        r = r.read().split("\n")
     except FileNotFoundError:
         f = open("pl","w")
         f.write("")
