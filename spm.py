@@ -57,6 +57,7 @@ def saveNewPrice(username,passwrd):
         f = open("pl","w")
         f.write("")
         f.close()
+        saveNewPrice(username,passwrd)
     if "" in r:
         r.remove("")
     f = open("pl","a+")
